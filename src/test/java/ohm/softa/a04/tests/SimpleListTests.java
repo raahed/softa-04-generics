@@ -70,4 +70,14 @@ public class SimpleListTests {
 			assertTrue(o % 2 == 0);
 		}
 	}
+
+	@Test
+	void testMapLambda(){
+		logger.info("Testing map lamdba");
+		SimpleList<Double> result = testList.map(o -> ((double)o + 0.5));
+		for(Double o : result)
+		{
+			assertTrue( o % 1 != 0);
+		}
+	}
 }

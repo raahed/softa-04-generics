@@ -19,6 +19,7 @@ public class SimpleListImpl<T> implements SimpleList<T> {
 	 * Add an object to the end of the list
 	 * @param item item to add
 	 */
+	@Override
 	public void add(T item){
 		/* special case empty list */
 		if(head == null){
@@ -37,23 +38,9 @@ public class SimpleListImpl<T> implements SimpleList<T> {
 	/**
 	 * @return size of the list
 	 */
+	@Override
 	public int size() {
 		return size;
-	}
-
-	/**
-	 * Get a new SimpleList instance with all items of this list which match the given filter
-	 * @param filter SimpleFilter instance
-	 * @return new SimpleList instance
-	 */
-	public SimpleList<T> filter(SimpleFilter<T> filter){
-		SimpleList<T> result = new SimpleListImpl<T>();
-		for(T o : this){
-			if(filter.include(o)){
-				result.add(o);
-			}
-		}
-		return result;
 	}
 
 	/**
